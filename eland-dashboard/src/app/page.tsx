@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useMemo } from 'react'
 import { Download } from 'lucide-react'
 import FileUpload from '@/components/ui/FileUpload'
+import SheetsImporter from '@/components/ui/SheetsImporter'
 import FilterBar from '@/components/ui/FilterBar'
 import KpiCard from '@/components/ui/KpiCard'
 import TrendChart from '@/components/charts/TrendChart'
@@ -118,6 +119,7 @@ export default function DashboardPage() {
         {/* Sidebar */}
         <aside className="flex flex-col gap-4">
           <FileUpload key={uploadKey} onSuccess={handleUploadSuccess} />
+          <SheetsImporter onSuccess={handleUploadSuccess} />
           <FilterBar
             filters={filters}
             options={filterOptions}
